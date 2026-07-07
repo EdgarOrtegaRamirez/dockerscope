@@ -13,7 +13,7 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: ['1.24']
+        go-version: ['1.24', '1.25']
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -41,7 +41,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.24'
+          go-version: '1.25'
 
       - name: Vet
         run: go vet ./...
