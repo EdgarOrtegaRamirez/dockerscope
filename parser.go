@@ -10,27 +10,27 @@ import (
 
 // Instruction represents a single Dockerfile instruction
 type Instruction struct {
-	Keyword    string   // FROM, RUN, COPY, etc.
-	Args       string   // Raw arguments
-	LineNum    int      // Line number in file
-	IsJSON    bool     // Whether this uses JSON array syntax
-	JSONArgs  []string // Parsed JSON array arguments
-	Flags     []string // Parser flags (e.g., --mount, --from)
-	ModifiesLayer bool // Whether this instruction creates a new layer
+	Keyword       string   // FROM, RUN, COPY, etc.
+	Args          string   // Raw arguments
+	LineNum       int      // Line number in file
+	IsJSON        bool     // Whether this uses JSON array syntax
+	JSONArgs      []string // Parsed JSON array arguments
+	Flags         []string // Parser flags (e.g., --mount, --from)
+	ModifiesLayer bool     // Whether this instruction creates a new layer
 }
 
 // Dockerfile represents a parsed Dockerfile
 type Dockerfile struct {
-	Path         string
-	Instructions []Instruction
-	StageNames   map[string]int   // stage name -> instruction index
-	StageCount   int
+	Path           string
+	Instructions   []Instruction
+	StageNames     map[string]int // stage name -> instruction index
+	StageCount     int
 	HasHEALTHCHECK bool
-	HasUSER      bool
-	Has_EXPOSE   bool
-	Has_WORKDIR  bool
-	Has_COPY     bool
-	Has_ADD      bool
+	HasUSER        bool
+	Has_EXPOSE     bool
+	Has_WORKDIR    bool
+	Has_COPY       bool
+	Has_ADD        bool
 }
 
 // ParseDockerfile parses a Dockerfile into a structured representation

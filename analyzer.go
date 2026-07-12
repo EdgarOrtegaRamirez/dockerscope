@@ -34,12 +34,12 @@ func (s Severity) String() string {
 
 // Issue represents a finding from analysis
 type Issue struct {
-	Severity    Severity
-	Category    string
-	Message     string
-	Line        int
-	Suggestion  string
-	RuleID      string
+	Severity   Severity
+	Category   string
+	Message    string
+	Line       int
+	Suggestion string
+	RuleID     string
 }
 
 // AnalysisResult contains all findings from analyzing a Dockerfile
